@@ -3,10 +3,22 @@ package com.src.zen.JavaPractices.task02;
 import com.src.zen.JavaPractices.task02.model.Product;
 
 public class ProductXYZ {
-    private Product[] products;
+    private final Product[] products;
 
-    public ProductXYZ(Product[] products){
-        this.products=products;
+    public ProductXYZ(Product[] products) {
+        this.products = products;
+    }
+
+    public static void main(String[] args) {
+        Product[] product = {new Product(123, 29.00, 2),
+                new Product(124, 19.00, 1),
+                new Product(125, 129.00, 3),
+                new Product(126, 229.00, 5),
+                new Product(127, 239.00, 7)};
+
+        ProductXYZ productXYZ = new ProductXYZ(product);
+        System.out.println("Find Pid of Highest Price :" + productXYZ.findPidOfHighestPricedProduct());
+        System.out.println("Calculate Total Amount : " + productXYZ.calculateTotalAmount());
     }
 
     public int findPidOfHighestPricedProduct() {
@@ -27,18 +39,6 @@ public class ProductXYZ {
             total += product.getPrice() * product.getQuantity();
         }
         return total;
-    }
-
-    public static void main(String[] args) {
-        Product product[]= {new Product(123, 29.00, 2),
-                new Product(124, 19.00, 1),
-                new Product(125, 129.00, 3),
-                new Product(126, 229.00, 5),
-                new Product(127, 239.00, 7)};
-
-        ProductXYZ productXYZ=new ProductXYZ(product);
-        System.out.println("Find Pid of Highest Price :"+productXYZ.findPidOfHighestPricedProduct());
-        System.out.println("Calculate Total Amount : "+productXYZ.calculateTotalAmount());
     }
 
 }

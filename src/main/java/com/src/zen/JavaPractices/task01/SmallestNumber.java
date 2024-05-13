@@ -14,13 +14,13 @@ public class SmallestNumber {
         }
 
 
-        int smallest=numbers[0];
-        for(int i=0; i<numbers.length;i++){
-            if(numbers[i]<smallest){
-                smallest=numbers[i];
+        int smallest = numbers[0];
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] < smallest) {
+                smallest = numbers[i];
             }
         }
 
-        System.out.println("The smallest number is :"+smallest);
+        System.out.println("The smallest number is :" + smallest);
     }
 }
